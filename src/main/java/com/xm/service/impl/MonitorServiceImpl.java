@@ -1,6 +1,7 @@
 package com.xm.service.impl;
 
 import com.alibaba.nacos.api.NacosFactory;
+import com.alibaba.nacos.api.PropertyKeyConst;
 import com.alibaba.nacos.api.exception.NacosException;
 import com.alibaba.nacos.api.naming.NamingService;
 import com.alibaba.nacos.api.naming.pojo.Instance;
@@ -18,6 +19,7 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Properties;
 import java.util.Set;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicLong;
@@ -65,7 +67,15 @@ public class MonitorServiceImpl implements MonitorService {
         if (StringUtils.isEmpty(nacosAddr)) {
             throw new IllegalArgumentException(NACOS_ADDR + " is empty");
         }
-        NamingService namingService = NacosFactory.createNamingService(nacosAddr);
+        //判断nameSpace
+        String nameSpace = tomlParseResult.getString(NAMESPACE);
+        if (StringUtils.isEmpty(nameSpace)) {
+            throw new IllegalArgumentException(NAMESPACE + " is empty");
+        }
+        Properties properties = new Properties();
+        properties.put(PropertyKeyConst.SERVER_ADDR, nacosAddr);
+        properties.put(PropertyKeyConst.NAMESPACE, nameSpace);
+        NamingService namingService = NacosFactory.createNamingService(properties);
 
         //获取配置项
         List<DiscoverConfigBO> list = new ArrayList<>();
