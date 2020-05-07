@@ -10,7 +10,7 @@
 
    配置文件使用[TOML](<https://github.com/toml-lang/toml>)进行配置
 
-   demo : {nacos-nginx-template.home}/conf/config.toml.example
+   demo : {nacos-nginx-service-found.home}/conf/config.toml.example
 
 | 参数               | 描述                                           | 例子                                                    |
 | ------------------ | ---------------------------------------------- | ------------------------------------------------------- |

@@ -52,7 +52,7 @@ public class Main {
         MonitorService monitorService = new MonitorServiceImpl();
         monitorService.updateNginxFromNacos(result);
 
-        logger.info("nacos-nginx-template start up!");
+        logger.info("nacos-nginx-service-found start up!");
 
         new CountDownLatch(1).await();
     }
