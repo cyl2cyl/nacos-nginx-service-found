@@ -29,3 +29,4 @@ sh bin/startup.sh
 ```
 
 # nacos-nginx-service-found
+修改点为：增加namespace参数
