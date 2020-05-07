@@ -4,7 +4,7 @@
 ## 简介
 
 本项目以Agent的形式让Nginx实现对Nacos的服务发现.
-
+原来的项目地址 https://github.com/YeautyYE/nacos-nginx-template
 ## 快速启动
 #### 配置config.toml
 
