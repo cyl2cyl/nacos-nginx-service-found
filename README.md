@@ -1,6 +1,4 @@
-# nacos-nginx-template
- [![License](https://img.shields.io/badge/license-Apache%202-4EB1BA.svg)](https://www.apache.org/licenses/LICENSE-2.0.html)[![Gitter](https://travis-ci.org/alibaba/nacos.svg?branch=master)](https://travis-ci.org/alibaba/nacos)
-
+# nacos-nginx-service-found
 -------
 
 ## 简介
@@ -8,14 +6,7 @@
 本项目以Agent的形式让Nginx实现对Nacos的服务发现.
 
 ## 快速启动
-
-
-
-1. #### 下载二进制包
-
-   点击此处下载:[最新稳定版](https://github.com/YeautyYE/nacos-nginx-template/releases/)
-
-2. #### 配置config.toml
+#### 配置config.toml
 
    配置文件使用[TOML](<https://github.com/toml-lang/toml>)进行配置
 
@@ -30,7 +21,7 @@
 | nginx_config       | 需要修改nginx配置的路径                        | "/etc/nginx/nginx.conf"                                 |
 | nginx_upstream     | nginx中upstream的名字                          | "nacos-service"                                         |
 
-3. #### 启动
+ #### 启动
 
 ```shell
 sh bin/startup.sh
