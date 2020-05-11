@@ -214,7 +214,7 @@ public class MonitorServiceImpl implements MonitorService {
                     }
                     String ip = instance.getIp();
                     int port = instance.getPort();
-                    servers.append(formatSymbol + "    server " + ip + ":" + port + ";\n");
+                    servers.append(formatSymbol + "    server " + ip + ":" + port + " max_fails=2 fail_timeout=5s;\n");
                 }
             }
             if (servers.length() == 0) {
